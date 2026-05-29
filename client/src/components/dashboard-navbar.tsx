@@ -1,6 +1,13 @@
 "use client";
 
-import { Bell, Search } from "lucide-react";
+import {
+  UserButton,
+} from "@clerk/nextjs";
+
+import {
+  Bell,
+  Search,
+} from "lucide-react";
 
 export default function DashboardNavbar() {
   return (
@@ -21,9 +28,7 @@ export default function DashboardNavbar() {
             <Bell className="h-5 w-5" />
           </button>
 
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-pink-500 font-bold">
-            A
-          </div>
+          <UserButton afterSignOutUrl="/" />
         </div>
       </div>
     </header>

@@ -1,22 +1,24 @@
-import Sidebar from "@/components/sidebar";
-import DashboardNavbar from "@/components/dashboard-navbar";
+import "./globals.css";
 
-export default function DashboardLayout({
+import Providers from "@/providers/providers";
+
+export const metadata = {
+  title: "NeuroPilot AI",
+  description: "Next Generation AI SaaS Platform",
+};
+
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen bg-black text-white">
-      <Sidebar />
-
-      <main className="flex-1">
-        <DashboardNavbar />
-
-        <div className="p-6">
+    <html lang="en">
+      <body>
+        <Providers>
           {children}
-        </div>
-      </main>
-    </div>
+        </Providers>
+      </body>
+    </html>
   );
 }
